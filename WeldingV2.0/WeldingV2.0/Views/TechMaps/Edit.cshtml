@@ -1,0 +1,50 @@
+﻿@model WeldingV2._0.Models.TechMap
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>TechMap</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TechMapId" />
+            <div class="form-group">
+                <label asp-for="MinValueAmp" class="control-label"></label>
+                <input asp-for="MinValueAmp" class="form-control" />
+                <span asp-validation-for="MinValueAmp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxValueAmp" class="control-label"></label>
+                <input asp-for="MaxValueAmp" class="form-control" />
+                <span asp-validation-for="MaxValueAmp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinValueVolt" class="control-label"></label>
+                <input asp-for="MinValueVolt" class="form-control" />
+                <span asp-validation-for="MinValueVolt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxValueVolt" class="control-label"></label>
+                <input asp-for="MaxValueVolt" class="form-control" />
+                <span asp-validation-for="MaxValueVolt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

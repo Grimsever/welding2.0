@@ -1,0 +1,54 @@
+﻿@model IEnumerable<WeldingV2._0.Models.TechMap>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MinValueAmp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxValueAmp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinValueVolt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxValueVolt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinValueAmp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxValueAmp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinValueVolt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxValueVolt)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TechMapId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TechMapId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TechMapId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
